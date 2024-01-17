@@ -1,6 +1,21 @@
 import header1 from '../../Images/heade1.jpg'
 import header2 from '../../Images/header2.jpg'
 import header3 from '../../Images/header3.jpg'
+import product2 from '../../Images/product2.png'
+import product3 from '../../Images/product3.png'
+import product4 from '../../Images/product4.png'
+import product5 from '../../Images/product5.png'
+import product6 from '../../Images/product6.png'
+import product7 from '../../Images/product7.png'
+import product8 from '../../Images/product8.png'
+import product9 from '../../Images/product9.png'
+import product10 from '../../Images/product10.png'
+import product11 from '../../Images/product11.png'
+import product1 from '../../Images/product1.png'
+import product12 from '../../Images/product12.png'
+import psale1 from '../../Images/nike-air-red.png'
+import psale2 from '../../Images/nike-adapt-bb.png'
+import psale3 from '../../Images/nike-adapt-bb-smart.png'
 import { FaInstagram } from "react-icons/fa6";
 import { FaFacebook,FaFacebookMessenger, FaYoutube  } from "react-icons/fa";
 
@@ -31,9 +46,8 @@ const socialbuttons=[{
     icon: <FaYoutube />
 }
 ]
-const popularsales = {
-    title: "Popular Sales",
-    items: [
+const popularsales = 
+    [
       {
         id: "0p0x1",
         title: "Nike Addapt BB 2.0",
@@ -41,7 +55,7 @@ const popularsales = {
         rating: "4.9",
         btn: "Buy Now",
         img: psale2,
-        price: "200",
+        price: "250",
         color: "from-blue-600 to-blue-500",
         shadow: "shadow-lg shadow-blue-500",
       },
@@ -52,7 +66,7 @@ const popularsales = {
         rating: "4.5",
         btn: "Buy Now",
         img: psale1,
-        price: "200",
+        price: "400",
         color: "from-red-500 to-rose-500",
         shadow: "shadow-lg shadow-rose-500",
       },
@@ -63,29 +77,13 @@ const popularsales = {
         rating: "5+",
         btn: "Buy Now",
         img: psale3,
-        price: "200",
+        price: "340",
         color: "from-violet-500 to-indigo-500",
         shadow: "shadow-lg shadow-violet-500",
       },
-    ],
-  };
-  const highlight = {
-    heading: "HIGHLIGHTS",
-    title: "NIKE AIR WITH LIMITLESS CHOICES",
-    text: "Our Purpose is to move the world forward. We take action by building community, protecting our planet and increasing access to sport.",
-    btn: "Explore More",
-    url: "https://www.nike.com/launch/t/nocta-hot-step-black-gold",
-    img: hightlightimg,
-  };
-  
-  const sneaker = {
-    heading: "FEATURED",
-    title: "NIKE SNEAKERS AIR LANCING SHOES",
-    text: "The radiance lives on Nike Sneakers Air Lancing Shoes, the basket ball OG that puts a fresh spin on what you know best: durably stitched overlays, clean finishes and the perfect amount of flash to make you shine.",
-    btn: "Explore More",
-    url: "https://sneakernews.com/2022/03/21/nike-lebron-2-retro-white-midnight-navy-varsity-crimson-dr0826-100/",
-    img: sneakershoe,
-  };
+    ]
+
+
   
   const toprateslaes = {
     title: "Top Rated Sales",
