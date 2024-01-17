@@ -62,7 +62,7 @@ const Cards = () => {
           <div className="flex justify-center items-center align-middle gap-10 flex-wrap">
             {topProducts.map((topproduct, index) => (
               <div
-                className={`flex flex-col pt-7 sm:w-[300px] sm:h-[465px] w-[90%] h-[485px] hover:scale-110 transition-all  duration-700  mt-11 shadow-md font-light rounded-md bg-gradient-to-b ${topproduct.color} ${topproduct.shadow} `}
+                className={`flex flex-col pt-7 sm:w-[300px] sm:h-[465px] w-[90%] h-[520px] hover:scale-110 transition-all  duration-700  mt-11 shadow-md font-light rounded-md bg-gradient-to-b ${topproduct.color} ${topproduct.shadow} `}
               >
                 <h1 className="text-[25px] text-white text-center">
                   {topproduct.title}
@@ -93,7 +93,7 @@ const Cards = () => {
                 </div>
                 <div className="mt-8  flex justify-center  items-center align-middle">
                   <img
-                    className="card-img sm:w-[70%] w-[65%] transition-transform duration-700 ease-in-out transform -rotate-[25deg] hover:rotate-0"
+                    className="card-img sm:w-[70%] w-[60%] transition-transform duration-700 ease-in-out transform -rotate-[25deg] hover:rotate-0"
                     src={topproduct.img}
                     alt=""
                   />

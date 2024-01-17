@@ -220,8 +220,38 @@ const popularsales =
         shadow: "shadow-lg shadow-blue-500",
       },
     ]
+    const footer=[{
+       link:'Order Status'
+    },{
+        link:'Delivery'
+    },
+    {
+        link:'Return'
+    },{
+        link:'Payment Option'
+    },{
+        linkL:'Contact Us On Nike.com'
+    },
+    {
+        link:'Inquires'
+    },{
+        link:'Contact Us On All Other'
+    },
+    {
+        about:'News'
+    },
+    {
+        about:'Careeres'
+    },{
+        about:'Investors'
+    },
+    {
+        about:'Sustainability'
+    }
+
+]
 
   
   
  
-export { headerimage,socialbuttons,popularsales,toprateslaes}
+export { headerimage,socialbuttons,popularsales,toprateslaes,footer}
