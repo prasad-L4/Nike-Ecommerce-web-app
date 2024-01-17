@@ -9,7 +9,7 @@ import { FaCartShopping } from "react-icons/fa6";
 const Navbar = () => {
   return (
     <>
-      <header className="w-[100%] h-12  opacity-100  items-center  bg-white shadow-md">
+      <header className="w-[100%] h-12 fixed z-50 opacity-100  items-center  bg-white shadow-md">
         <nav className=" flex justify-between  px-6">
           <div className="text-[45px] ">
             <SiNike />

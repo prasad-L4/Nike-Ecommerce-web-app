@@ -85,9 +85,8 @@ const popularsales =
 
 
   
-  const toprateslaes = {
-    title: "Top Rated Sales",
-    items: [
+  const toprateslaes = 
+ [
       {
         id: "0M0x1",
         title: "Nike Air Low Premium",
@@ -220,9 +219,9 @@ const popularsales =
         color: "from-blue-900 to-blue-500",
         shadow: "shadow-lg shadow-blue-500",
       },
-    ],
-  };
+    ]
+
   
   
  
-export { headerimage,socialbuttons,popularsales}
+export { headerimage,socialbuttons,popularsales,toprateslaes}
