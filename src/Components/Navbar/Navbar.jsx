@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { SiNike } from "react-icons/si";
 import { CiSearch } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
-import { FaCartShopping } from "react-icons/fa6";
+import { FaCartShopping, FaDisplay } from "react-icons/fa6";
+import Cart from "../Cart/Cart";
+import { useSelector, useDispatch } from "react-redux";
+
+const Navbar = ({ ModalisOPen }) => {
+  const dispatch = useDispatch();
+  const CartIsClosed = () => useSelector((state) => state.cart.value);
+
+ const [isOpen, setisOpen] = useState(false)
 
 
-const Navbar = () => {
+ const handleCartClick=()=>{
+  setisOpen(true)
+ }
+ const handleCartClosed=()=>{
+  setisOpen(false)
+ }
   return (
     <>
       <header className="w-[100%] h-12 fixed z-50 opacity-100  items-center  bg-white shadow-md">
@@ -21,9 +34,13 @@ const Navbar = () => {
             <button className="hover:scale-125 transition-all duration-300">
               <FaHeart />
             </button>
-            <button className="hover:scale-125 transition-all duration-300">
-            <FaCartShopping />
+            <button
+              className="hover:scale-125 transition-all duration-300"
+              onClick={handleCartClick}
+            >
+              <FaCartShopping />
             </button>
+            {isOpen? <Cart handleCartClosed={handleCartClosed} isOpen={isOpen} />:null}
           </div>
         </nav>
       </header>

@@ -9,6 +9,7 @@ const Main = () => {
   return (
     <>
       <Navbar />
+      
       <Header />
       <Cards />
       <Toprated />

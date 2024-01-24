@@ -31,7 +31,7 @@ const Toprated = () => {
                       <FaStar />
                     </span>
                     <h4>{topproduct.rating}</h4>
-                  </div>
+                  </div>      
                 </div>
                 <div className="card-btn flex justify-center mt-3 gap-3">
                   <button>
