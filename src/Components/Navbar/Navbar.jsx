@@ -4,8 +4,9 @@ import { SiNike } from "react-icons/si";
 import { CiSearch } from "react-icons/ci";
 import { FaHeart } from "react-icons/fa";
 import { FaCartShopping, FaDisplay } from "react-icons/fa6";
-import Cart from "../Cart/Cart";
+import AfterCart from "../Cart/Cart";
 import { useSelector, useDispatch } from "react-redux";
+import Cart from "../Cart/Cart";
 
 const Navbar = ({ ModalisOPen }) => {
   const dispatch = useDispatch();

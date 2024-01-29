@@ -3,9 +3,16 @@ import  { useState } from "react";
 import { toprateslaes } from "../Datas/Datas";
 import { FaStar } from "react-icons/fa";
 import { IoBagHandle } from "react-icons/io5";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../Redux/Reducer/Reducer";
+import { Link } from "react-router-dom";
+
+
 
 const Toprated = () => {
   const [topProducts, setTopProducts] = useState(toprateslaes);
+  const dispatch=useDispatch()
+
   return (
     <>
       <section>
@@ -16,7 +23,14 @@ const Toprated = () => {
               <div
                 className={`flex flex-col pt-7 sm:w-[300px] sm:h-[465px] w-[90%] h-[520px] hover:scale-110 transition-all  duration-700  mt-11 shadow-md font-light rounded-md bg-gradient-to-b ${topproduct.color} ${topproduct.shadow} `}
               >
-                <h1 className="text-[25px] text-white text-center">
+                     <div className="mt-  flex justify-center  items-center align-middle">
+                  <img
+                    className="card-img sm:w-[70%] w-[60%] transition-transform duration-700 ease-in-out transform -rotate-[25deg] hover:rotate-0"
+                    src={topproduct.img}
+                    alt=""
+                  />
+                </div>
+                <h1 className="text-[25px] mt-14 text-white text-center">
                   {topproduct.title}
                 </h1>
                 <p className="text-[20px] mt-2 text-white text-center">
@@ -34,7 +48,8 @@ const Toprated = () => {
                   </div>      
                 </div>
                 <div className="card-btn flex justify-center mt-3 gap-3">
-                  <button>
+                  
+                  <button onClick={()=>dispatch(addToCart(topproduct))}>
                     <IoBagHandle />
                   </button>
                   <button
@@ -43,13 +58,7 @@ const Toprated = () => {
                     BUY NOW
                   </button>
                 </div>
-                <div className="mt-8  flex justify-center  items-center align-middle">
-                  <img
-                    className="card-img sm:w-[70%] w-[60%] transition-transform duration-700 ease-in-out transform -rotate-[25deg] hover:rotate-0"
-                    src={topproduct.img}
-                    alt=""
-                  />
-                </div>
+           
               </div>
             ))}
           </div>

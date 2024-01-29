@@ -1,22 +1,28 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 
+const INITIAL_STATE={
+    cartList:[],
+    cartCount:0
+}
+
 export const CartSlice=createSlice({
     name:'Cart',
-    initialState:{
-        value:false
-
-    },
+    initialState:INITIAL_STATE,
     reducers:{
-        ModalisOPen:(state)=>{
-            state.value = true;
+        addToCart:(state,action)=>{
+         state.cartCount=1
+         state.cartList.push(action.payload)
         },
-        ModalisClosed:(state)=>{
-            state.value=false
+        increment:(state)=>{
+            state.cartCount+=1
+        },
+        decrement:(state)=>{
+            state.cartCount-=1
         }
     }
 })
 
 
-export const {ModalisOPen,ModalisClosed}=CartSlice.actions
+export const {addToCart,increment,decrement}=CartSlice.actions
 export default CartSlice.reducer
