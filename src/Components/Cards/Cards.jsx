@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import { popularsales, toprateslaes } from "../Datas/Datas";
 import { FaStar } from "react-icons/fa";
 import { IoBagHandle } from "react-icons/io5";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../Redux/Reducer/Reducer";
 import "./Cards.css";
 
 const Cards = () => {
   const [products, setproducts] = useState(popularsales);
+  const dispatch=useDispatch()
 
   return (
     <>
@@ -35,12 +38,12 @@ const Cards = () => {
                   </div>
                 </div>
                 <div className="card-btn flex justify-center mt-3 gap-3">
-                  <button>
+                  <button onClick={()=>dispatch(addToCart(product))}>
                     <IoBagHandle />
                   </button>
                   <button
                     className={`bg-white text-[20px] w-[90px] rounded-md hover:bg-gradient-to-b ${product.color} ${product.shadow} hover:text-white`}
-                  >
+                    onClick={()=>dispatch(addToCart(product))} >
                     BUY NOW
                   </button>
                 </div>

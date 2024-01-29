@@ -3,7 +3,7 @@ import Modal from "./Modal";
 import { MdOutlineKeyboardDoubleArrowLeft } from "react-icons/md";
 import { IoCloseSharp } from "react-icons/io5";
 import { useSelector,useDispatch } from "react-redux";
-import { increment,decrement } from "../Redux/Reducer/Reducer";
+import { increment,decrement,deletebtn } from "../Redux/Reducer/Reducer";
 
 
 
@@ -11,7 +11,7 @@ const Cart = ({ handleCartClosed, isOpen }) => {
   const [showModal, setShowModal] = useState(false);
   const {cartList,cartCount}=useSelector((state)=>state.cart)
   const dispatch=useDispatch()
- 
+ const countCart=cartList.find((item)=>item.id===cartList.id)
   return (
     <>
       {isOpen ? (
@@ -39,7 +39,7 @@ const Cart = ({ handleCartClosed, isOpen }) => {
                   cartCount>0?     <div className="relative p-6 flex-auto">
                     {
                       cartList.map((data,index)=>((
-                        <div className="  text-center align-middle  md:flex flex-wrap flex-grow-1 justify-around w-[100%] md:h-[80px] rounded-md shadow-md bg-white items-center ">
+                        <div key={index} className="  text-center align-middle  md:flex flex-wrap flex-grow-1 justify-around w-[100%] md:h-[80px] rounded-md shadow-md bg-white items-center ">
                         <img
                           className="md:w-[100px] w-[100%] h-[50px]"
                           src={data.img}
@@ -49,14 +49,14 @@ const Cart = ({ handleCartClosed, isOpen }) => {
                           <h2>{data.title}</h2>
                           <h4>{data.text}</h4>
                           <div className="flex justify-center">
-                            <button onClick={()=>dispatch(decrement())}>-</button>
-                            <h2>{cartCount}</h2>
-                            <button onClick={()=>dispatch(increment())}>+</button>
+                            <button onClick={()=>dispatch(decrement(data.id))}>-</button>
+                            <h2>{data.count}</h2>
+                            <button onClick={()=>dispatch(increment(data.id))}>+</button>
                           </div>
                         </div>
                         <div>
                           <h2>rate</h2>
-                          <button>delete</button>
+                          <button onClick={()=>dispatch(deletebtn(data.id))} >delete</button>
                         </div>
                       </div>
                       )))
@@ -72,7 +72,7 @@ const Cart = ({ handleCartClosed, isOpen }) => {
                     className="bg-blue-950  w-[100%] text-white active:bg-green-800 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button"
                   >
-                    check Out <span>{cartList.length}</span>
+                    check Out <span>{cartList.count}</span>
                   </button>
                 </div>
               </div>

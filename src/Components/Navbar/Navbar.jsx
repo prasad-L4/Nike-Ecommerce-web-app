@@ -9,18 +9,18 @@ import { useSelector, useDispatch } from "react-redux";
 import Cart from "../Cart/Cart";
 
 const Navbar = ({ ModalisOPen }) => {
+  const { cartList, cartCount } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const CartIsClosed = () => useSelector((state) => state.cart.value);
 
- const [isOpen, setisOpen] = useState(false)
+  const [isOpen, setisOpen] = useState(false);
 
-
- const handleCartClick=()=>{
-  setisOpen(true)
- }
- const handleCartClosed=()=>{
-  setisOpen(false)
- }
+  const handleCartClick = () => {
+    setisOpen(true);
+  };
+  const handleCartClosed = () => {
+    setisOpen(false);
+  };
   return (
     <>
       <header className="w-[100%] h-12 fixed z-50 opacity-100  items-center  bg-white shadow-md">
@@ -36,12 +36,19 @@ const Navbar = ({ ModalisOPen }) => {
               <FaHeart />
             </button>
             <button
-              className="hover:scale-125 transition-all duration-300"
+              className="hover:scale-125 transition-all duration-300 flex justify-center items-center"
               onClick={handleCartClick}
             >
-              <FaCartShopping />
+              <FaCartShopping />{
+                cartList.length>0&& <span className="text-[10px] mt-[-18px] bg-green-600 text-white rounded-[50%] object-cover w-4">
+                {cartList.length}
+              </span>
+              }
+             
             </button>
-            {isOpen? <Cart handleCartClosed={handleCartClosed} isOpen={isOpen} />:null}
+            {isOpen ? (
+              <Cart handleCartClosed={handleCartClosed} isOpen={isOpen} />
+            ) : null}
           </div>
         </nav>
       </header>

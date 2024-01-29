@@ -54,7 +54,7 @@ const Toprated = () => {
                   </button>
                   <button
                     className={`bg-white text-[20px] w-[90px] rounded-md hover:bg-gradient-to-b ${topproduct.color} ${topproduct.shadow} hover:text-white`}
-                  >
+                    onClick={()=>dispatch(addToCart(topproduct))} >
                     BUY NOW
                   </button>
                 </div>
