@@ -46,7 +46,7 @@ const Cart = ({ handleCartClosed, isOpen }) => {
                         <div key={index} className=" flex flex-col text-center align-middle  md:flex flex-wrap flex-grow-1 justify-center  md:justify-around w-[100%] md:h-[100px] rounded-md shadow-md bg-white items-center ">
                           <div className={`md:w-[140px] w-[80%] h-[74px] flex justify-center items-center rounded-md  bg-gradient-to-b ${data.color} `}>
                           <img
-                          className={`md:w-[100px] w-[80%] h-[54px]  bg-gradient-to-b ${data.color}`}
+                          className={`md:w-[100px] w-[80%] h-[60px]  bg-gradient-to-b ${data.color}`}
                           src={data.img}
                           alt=""
                         />
