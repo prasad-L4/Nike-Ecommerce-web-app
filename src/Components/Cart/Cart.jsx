@@ -14,6 +14,8 @@ const Cart = ({ handleCartClosed, isOpen }) => {
   const {cartList,cartCount}=useSelector((state)=>state.cart)
   const dispatch=useDispatch()
  const countCart=cartList.find((item)=>item.id===cartList.id)
+
+ const [order, setorder] = useState(false)
   return (
     <>
       {isOpen ? (
@@ -81,6 +83,7 @@ const Cart = ({ handleCartClosed, isOpen }) => {
                     >
                     check Out 
                   </button>
+
                 </div>
               </div>
             </div>

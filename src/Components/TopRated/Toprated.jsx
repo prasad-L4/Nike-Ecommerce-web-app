@@ -3,14 +3,16 @@ import  { useState } from "react";
 import { toprateslaes } from "../Datas/Datas";
 import { FaStar } from "react-icons/fa";
 import { IoBagHandle } from "react-icons/io5";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../Redux/Reducer/Reducer";
 import { Link } from "react-router-dom";
+import Alert from "../Alert/Alert";
 
 
 
 const Toprated = () => {
   const [topProducts, setTopProducts] = useState(toprateslaes);
+  const {cartList,cartCount,cartAlert}=useSelector((state)=>state.cart)
   const dispatch=useDispatch()
 
   return (
@@ -52,6 +54,7 @@ const Toprated = () => {
                   <button onClick={()=>dispatch(addToCart(topproduct))}>
                     <IoBagHandle />
                   </button>
+             
                   <button
                     className={`bg-white text-[20px] w-[90px] rounded-md hover:bg-gradient-to-b ${topproduct.color} ${topproduct.shadow} hover:text-white`}
                     onClick={()=>dispatch(addToCart(topproduct))} >
