@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const INITIAL_STATE = {
   cartList: [],
   cartCount: 0,
+  cartAlert:false
 };
 
 export const CartSlice = createSlice({
@@ -12,6 +13,7 @@ export const CartSlice = createSlice({
     addToCart: (state, action) => {
       state.cartCount = 1;
       state.cartList.push({ ...action.payload, count: 1 });
+      state.cartAlert=true
     },
     increment: (state, action) => {
       const ProductID = action.payload;
